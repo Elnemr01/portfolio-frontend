@@ -8,20 +8,20 @@ const Landing = () => {
         <section id='home' className='h-[85vh]'>
                 <div className="container flex flex-col-reverse md:grid md:grid-cols-2 gap-10 h-full">
                     <div className="sec-left flex flex-col justify-center gap-5">
-                        <div className="text text-common space-y-4">
-                            <span className='text-primary font-semibold text-5xl mb-4 inline-block'>I'm Ahmed Elnemr</span><br/>
+                        <div className="text text-secondary space-y-4">
+                            <span className='text-primary font-semibold text-3xl sm:text-5xl mb-4 inline-block'>I'm Ahmed Elnemr</span><br/>
                             A passionate Frontend Developer with a strong focus on creating visually appealing and user-friendly
                             web applications. I specialize in crafting responsive and interactive interfaces that enhance the
                             overall user experience.
                         </div>
                         <div className="btns flex gap-5 items-center">
-                            <Button type="button" className={'py-5 rounded-sm flex items-center gap-2'}>
+                            <Button type="button" className={'py-5 rounded-sm bg-primary-1 flex items-center gap-2 hover:bg-primary-1 dark:text-light'}>
                                 <Phone />
-                                <a href="#contact" className='text-white'>Contact Me</a>
+                                <a href="#contact" className='text-'>Contact Me</a>
                             </Button>
-                            <Button type="button" className={'py-5 rounded-sm flex items-center gap-2'}>
+                            <Button type="button" className={'py-5 rounded-sm flex items-center gap-2 bg-dark hover:bg-dark dark:bg-light'}>
                                 <File />
-                                <a href="./Ahmed_Elnemr_Frontend.pdf" className='bg-secondary'
+                                <a href="./Ahmed_Elnemr_Frontend.pdf" className=''
                                 target='_blank'>Show My Resume</a>
                             </Button>
                         </div>

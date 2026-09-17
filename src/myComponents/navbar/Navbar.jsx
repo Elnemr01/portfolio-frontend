@@ -1,6 +1,6 @@
 import { navLinks } from '@/constants/data'
-import { Layers } from 'lucide-react'
-import React, { useMemo } from 'react'
+import { Layers, Moon, Sun, Thermometer } from 'lucide-react'
+import React, { useCallback, useMemo } from 'react'
 import { NavLink } from 'react-router'
 import { Button } from "@/components/ui/button"
 import {
@@ -10,25 +10,32 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useTheme } from '@/contextApi/ThemeProvider'
 
 const Navbar = () => {
+
+    const {theme,setTheme}=useTheme();
     
     const links = useMemo(()=> navLinks, [])
 
+    const toggleTheme = useCallback(() => {
+        setTheme(theme === "dark" ? "light" : "dark")
+    }, [theme])
+
     return (
-        <header className='py-5 shadow-md'>
+        <header className='py-5 shadow-md dark:shadow-primary fixed top-0 left-0  mx-auto w-full'>
             <div className="container flex items-center justify-between">
                 <div className="logo">
                     <span className='text-primary font-semibold text-2xl'>Elnemr</span>
-                    <span>.</span>
-                    <span className='text-sm text-common font-semibold'>Dev</span>
+                    <span className='text-primary-1 font-semibold'>.</span>
+                    <span className='text-dark dark:text-light font-semibold'>Dev</span>
                 </div>
-                <nav className="items-center gap-4 sm:flex">
+                <nav className=" items-center gap-4 flex">
                     <ul className="links hidden gap-4 items-center sm:flex">
                         {
                             links.map((link, index) => (
                                 <li key={index}>
-                                    <NavLink to={link.to} className={'text-common font-semibold'}>
+                                    <NavLink to={link.to} className={'text-dark dark:text-light font-semibold'}>
                                         {link.title}
                                     </NavLink>
                                 </li>
@@ -45,7 +52,7 @@ const Navbar = () => {
                                     {
                                         links.map((link, index) => (
                                             <DropdownMenuItem key={index}>
-                                                <NavLink to={link.to} className={'text-common font-semibold px-2 my-1 w-full'}>
+                                                <NavLink to={link.to} className={'text-dark dark:text-light font-semibold px-2 my-1 w-full'}>
                                                     {link.title}
                                                 </NavLink>
                                             </DropdownMenuItem>
@@ -55,14 +62,19 @@ const Navbar = () => {
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </div>
-                    {/* <div className="theme">
-                        <Braces size={20} />
-                    </div> */}
+                    <div className="theme">
+                        {theme === "dark" ? (
+                            <Sun className="h-[1.2rem] w-[1.2rem] cursor-pointer" onClick={()=> toggleTheme()}/>
+                        ) : (
+                            <Moon className="h-[1.2rem] w-[1.2rem] cursor-pointer" onClick={()=> toggleTheme()}/>
+                        )}
+                    </div>
                 </nav>
 
             </div>
         </header>
     )
+
 }
 
 export default Navbar

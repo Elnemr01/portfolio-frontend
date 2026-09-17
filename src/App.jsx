@@ -5,7 +5,7 @@ import Home from './pages/home/Home'
 function App() {
 
   return (
-    <div className="App bg-background">
+    <div className="App bg-background pt-17.5">
       <Navbar/>
       <Home/>
     </div>
