@@ -15,7 +15,7 @@ const WorkCard = ({card}) => {
             <Accordion
                 type="single"
                 defaultValue={`${card.id==='01' ? 'opened' : ''}`}
-                className="w-full border border-dark p-4 dark:border-secondary rounded-lg">
+                className="w-full border border-dark p-4 dark:border-secondary rounded-lg cursor-pointer">
                 <AccordionItem value={'opened'}>
                     <AccordionTrigger>
                         <div className="front flex flex-col gap-2 text-base">
