@@ -23,7 +23,7 @@ const Navbar = () => {
     }, [theme])
 
     return (
-        <header className='py-5 shadow-md dark:shadow-primary fixed top-0 left-0  mx-auto w-full'>
+        <header className='py-5 shadow-md dark:shadow-primary fixed top-0 left-0  mx-auto w-full z-50 bg-background'>
             <div className="container flex items-center justify-between">
                 <div className="logo">
                     <span className='text-primary font-semibold text-2xl'>Elnemr</span>
@@ -35,9 +35,9 @@ const Navbar = () => {
                         {
                             links.map((link, index) => (
                                 <li key={index}>
-                                    <NavLink to={link.to} className={'text-dark dark:text-light font-semibold'}>
+                                    <a href={link.to} className={'text-dark dark:text-light font-semibold'}>
                                         {link.title}
-                                    </NavLink>
+                                    </a>
                                 </li>
                             ))
                         }
@@ -52,9 +52,9 @@ const Navbar = () => {
                                     {
                                         links.map((link, index) => (
                                             <DropdownMenuItem key={index}>
-                                                <NavLink to={link.to} className={'text-dark dark:text-light font-semibold px-2 my-1 w-full'}>
+                                                <a href={link.to} className={'text-dark dark:text-light font-semibold px-2 my-1 w-full'}>
                                                     {link.title}
-                                                </NavLink>
+                                                </a>
                                             </DropdownMenuItem>
                                         ))
                                     }
