@@ -1,5 +1,5 @@
 import { navLinks } from '@/constants/data'
-import { Layers, Moon, Sun, Thermometer } from 'lucide-react'
+import { Layers, Menu, Moon, Sun, Thermometer } from 'lucide-react'
 import React, { useCallback, useMemo } from 'react'
 import { NavLink } from 'react-router'
 import { Button } from "@/components/ui/button"
@@ -45,7 +45,7 @@ const Navbar = () => {
                     <div className="mobile-list block sm:hidden">
                         <DropdownMenu className='p-4'>
                             <DropdownMenuTrigger render={<Button variant="flat" className="cursor-pointer font-bold text-xl">
-                                <Layers size={20} />
+                                <Menu size={20} />
                             </Button>} />
                             <DropdownMenuContent className="w-40" align="start">
                                 <DropdownMenuGroup>
