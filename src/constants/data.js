@@ -1,3 +1,5 @@
+import { GitBranch, Mail, Phone, Telescope } from "lucide-react"
+
 
 export const navLinks =[
     {to: '/#', title: 'Home'},
@@ -37,11 +39,60 @@ export const workExperinces = [
 ]
 
 
-export const contact = {
-    facebook :'https://www.facebook.com/share/17iL3kMu4w/?mibextid=wwXIfr',
-    instagram : 'https://www.instagram.com/a7med_elnemr_?igsh=MWxocjh3MGRtdGhmdQ%3D%3D&utm_source=qr',
-    whatsapp : 'https://wa.me/01204662807',
-    gmail : 'mailto:ahmedelnemrdev@gmail.com',
-    github: 'https://github.com/Elnemr01',
-    linkedin : 'https://www.linkedin.com/in/ahmedelnemr01',
-}
+export const contact = [
+    {
+        id: '01',
+        title: 'Facebook',
+        link: 'https://www.facebook.com/share/17iL3kMu4w/?mibextid=wwXIfr',
+        icon: Telescope
+    },
+    {
+        id: '02',
+        title: 'Gmail',
+        link: 'mailto:ahmedelnemrdev@gmail.com',
+        icon: Mail
+    },
+    {
+        id: '03',
+        title: 'Github',
+        link: 'https://github.com/Elnemr01',
+        icon: GitBranch
+    },
+    {
+        id: '04',
+        title: 'Linkedin',
+        link: 'https://www.linkedin.com/in/ahmedelnemr01',
+        icon: Telescope
+    },
+    {
+        id: '05',
+        title: 'WhatsApp',
+        link: 'https://wa.me/01204662807',
+        icon: Phone
+    },
+    {
+        id: '06',
+        title: 'Instagram',
+        link: 'https://www.instagram.com/a7med_elnemr_?igsh=MWxocjh3MGRtdGhmdQ%3D%3D&utm_source=qr',
+        icon: Telescope
+    },
+
+]
+
+export const skills = [
+    {
+        id: '01',
+        catogry: 'Frontend',
+        skillName: 'React', 
+    },
+    {
+        id: '02',
+        catogry: 'Frontend',
+        skillName: 'React', 
+    },
+    {
+        id: '03',
+        catogry: 'Frontend',
+        skillName: 'React', 
+    }
+]
