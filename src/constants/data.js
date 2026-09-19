@@ -96,3 +96,24 @@ export const skills = [
         skillName: 'React', 
     }
 ]
+
+export const myProjects = [
+    {
+        id: '01',
+        title: 'Doctor Appointment System',
+        subTitle: 'Web Application',
+        image: './my-profile.jpeg',
+        description: [
+            'A web application that allows patients to book appointments with doctors, view their medical history, and receive notifications for upcoming appointments.',
+            'The application also allows doctors to manage their schedules, view patient information, and communicate with patients through the platform.',
+            'Built using React, Node.js, Express, and MongoDB, with a focus on responsive design and user experience.'
+        ],
+        skills: [
+            { category: 'frontend', skillName: 'React' },
+            { category: 'frontend', skillName: 'React' },
+            { category: 'frontend', skillName: 'React' },
+        ],
+        github: 'https://github.com',
+        live: 'https://doctor-appointment-system.com',
+    }
+]

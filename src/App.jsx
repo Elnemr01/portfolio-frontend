@@ -1,13 +1,16 @@
+import { Route, Routes } from 'react-router'
 import './App.css'
-import Navbar from './myComponents/navbar/Navbar'
 import Home from './pages/home/Home'
+import AllProjects from './pages/projects/AllProjects'
 
 function App() {
 
   return (
     <div className="App bg-background pt-17.5">
-      <Navbar/>
-      <Home/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/projects' element={<AllProjects/>}/>
+      </Routes>
     </div>
   )
 }

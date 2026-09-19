@@ -1,7 +1,6 @@
 import { navLinks } from '@/constants/data'
 import { Layers, Menu, Moon, Sun, Thermometer } from 'lucide-react'
 import React, { useCallback, useMemo } from 'react'
-import { NavLink } from 'react-router'
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,

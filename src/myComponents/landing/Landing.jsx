@@ -8,9 +8,9 @@ const Landing = () => {
         <section id='home' className='h-[85vh]'>
                 <div className="container flex flex-col-reverse md:grid md:grid-cols-2 gap-10 h-full">
                     <div className="sec-left flex flex-col justify-center gap-5">
-                        <div className="text text-secondary space-y-4">
+                        <div className="text text-secondary space-y-4 text-lg">
                             <span className='text-primary font-semibold text-3xl sm:text-5xl mb-4 inline-block'>I'm Ahmed Elnemr</span><br/>
-                            A passionate Frontend Developer with a strong focus on creating visually appealing and user-friendly
+                            A passionate <span className='text-2xl font-semibold dark:text-primary-1'>Frontend Developer</span> with a strong focus on creating visually appealing and user-friendly
                             web applications. I specialize in crafting responsive and interactive interfaces that enhance the
                             overall user experience.
                         </div>
