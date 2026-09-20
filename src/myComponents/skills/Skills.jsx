@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import Title from '../title/Title'
 import { Button } from '@/components/ui/button'
-import { skills } from '@/constants/data';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -9,15 +8,22 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import useGetSkills from '@/hooks/skills/useGetSkills';
+import { useInView } from 'react-intersection-observer';
+import Error from '../models/Error';
+import Loading from '../models/Loading';
 
 const Skills = () => {
-    
+    const {ref,inView}=useInView({
+        rootMargin: '300px',
+    });
     const [selectedBtn,setBtn]=useState("frontend");
-    const mySkills=useMemo(()=> skills,[]);
+    const {skills, isLoading, isError, error} = useGetSkills({inView,selectedBtn});
 
+    if(isError) return <Error/>
 
     return (
-        <section id='skills' className='mt-8 p-4'>
+        <section id='skills' className='mt-8 p-4' ref={ref}>
             <Title text={'Skills'} subTitle={"Tools and technologies I work with"}/>
             <div className="container border border-dark dark:border-secondary rounded-lg p-4 mt-8">
                 <div className="filter flex gap-4 mb-4 items-center justify-between">
@@ -54,15 +60,18 @@ const Skills = () => {
                     </DropdownMenu>
                 </div>
                 {/* skills */}
+                {isLoading ? 
+                <Loading/>
+                :
                 <div className="skills flex gap-4 flex-wrap">
                     {
-                        skills.filter(skill=>skill.catogry.toLowerCase()===selectedBtn).map((skill)=>(
-                            <div key={skill.id} className="skill p-2 py-0 border border-dark dark:border-secondary rounded-full">
+                        skills?.data?.skills?.map((skill)=>(
+                            <div key={skill._id} className="skill p-2 py-0 border border-dark dark:border-secondary rounded-full">
                                 <h4 className='text-base font-semibold'>{skill.skillName}</h4>
                             </div>
                         ))
                     }
-                </div>
+                </div>}
             </div>
         </section>
     )
