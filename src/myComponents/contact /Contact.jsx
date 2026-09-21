@@ -3,6 +3,7 @@ import MessageForm from './MessageForm'
 import { contact } from '@/constants/data'
 import Title from '../title/Title';
 
+
 const Contact = () => {
     const links=useMemo(()=> contact,[] );
 

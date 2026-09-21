@@ -1,4 +1,11 @@
 import { GitBranch, Mail, Phone, Telescope } from "lucide-react"
+import {
+    SiFacebook,
+    SiInstagram,
+    SiWhatsapp,
+    SiGithub,
+    SiGmail,
+} from 'react-icons/si'
 
 
 export const navLinks =[
@@ -10,110 +17,42 @@ export const navLinks =[
     {to: '/#contact', title: 'Contact'},
 ]
 
-export const workExperinces = [
-    {
-        id: '01',
-        title: "Frontend Developer",
-        subTitle: 'Intenrship - Onsite',
-        location: "serv5",
-        duration: "06/2026 - 07/2026",
-        description: [
-            "Contributed to the development of Markivia, a SaaS platform enabling companies to build theirown websites with customizable pricing plans, company information, and goal-setting sections.",
-            "Built and implemented dynamic forms for company registration, pricing plans, and business information sections.",
-            "Developed the authentication system, including a complete Forget Password flow with OTP verification.",
-        ]
-    },
-    {
-        id: '02',
-        title: "ITI Summer Training Program",
-        subTitle: 'Internship - Remote',
-        location: "Indormation Technology Institute",
-        duration: "07/2025 - 08/2025",
-        description: [
-            "Completed an intensive React Web Development track at ITI (Information Technology Institute), combining online sessions with hands-on labs and daily task-based assignments.",
-            "Served as Team Leader, responsible for distributing tasks among team members and reviewing code upon completion to ensure quality and consistency.",
-            "Led team of 10 developers to deliver Doctor Appointment System as the graduation project, applying React concepts learned throughout the track.",
-            "Gained hands-on experience in leadership and task coordination, balancing individual contributions with overall team progress.",
-        ]
-    },
-]
-
 
 export const contact = [
     {
         id: '01',
         title: 'Facebook',
         link: 'https://www.facebook.com/share/17iL3kMu4w/?mibextid=wwXIfr',
-        icon: Telescope
+        icon: SiFacebook
     },
     {
         id: '02',
         title: 'Gmail',
         link: 'mailto:ahmedelnemrdev@gmail.com',
-        icon: Mail
+        icon: SiGmail
     },
     {
         id: '03',
         title: 'Github',
         link: 'https://github.com/Elnemr01',
-        icon: GitBranch
+        icon: SiGithub
     },
     {
         id: '04',
         title: 'Linkedin',
         link: 'https://www.linkedin.com/in/ahmedelnemr01',
-        icon: Telescope
+        icon: Mail
     },
     {
         id: '05',
         title: 'WhatsApp',
         link: 'https://wa.me/01204662807',
-        icon: Phone
+        icon: SiWhatsapp
     },
     {
         id: '06',
         title: 'Instagram',
         link: 'https://www.instagram.com/a7med_elnemr_?igsh=MWxocjh3MGRtdGhmdQ%3D%3D&utm_source=qr',
-        icon: Telescope
+        icon: SiInstagram
     },
-
-]
-
-export const skills = [
-    {
-        id: '01',
-        catogry: 'Frontend',
-        skillName: 'React', 
-    },
-    {
-        id: '02',
-        catogry: 'Frontend',
-        skillName: 'React', 
-    },
-    {
-        id: '03',
-        catogry: 'Frontend',
-        skillName: 'React', 
-    }
-]
-
-export const myProjects = [
-    {
-        id: '01',
-        title: 'Doctor Appointment System',
-        subTitle: 'Web Application',
-        image: './my-profile.jpeg',
-        description: [
-            'A web application that allows patients to book appointments with doctors, view their medical history, and receive notifications for upcoming appointments.',
-            'The application also allows doctors to manage their schedules, view patient information, and communicate with patients through the platform.',
-            'Built using React, Node.js, Express, and MongoDB, with a focus on responsive design and user experience.'
-        ],
-        skills: [
-            { category: 'frontend', skillName: 'React' },
-            { category: 'frontend', skillName: 'React' },
-            { category: 'frontend', skillName: 'React' },
-        ],
-        github: 'https://github.com',
-        live: 'https://doctor-appointment-system.com',
-    }
 ]

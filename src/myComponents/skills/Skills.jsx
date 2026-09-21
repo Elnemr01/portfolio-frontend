@@ -12,13 +12,16 @@ import useGetSkills from '@/hooks/skills/useGetSkills';
 import { useInView } from 'react-intersection-observer';
 import Error from '../models/Error';
 import Loading from '../models/Loading';
+import Pagination from '../pagination/Pagination';
+import Empty from '../models/Empty';
 
 const Skills = () => {
+    const [page,setPage]=useState(1);
     const {ref,inView}=useInView({
         rootMargin: '300px',
     });
     const [selectedBtn,setBtn]=useState("frontend");
-    const {skills, isLoading, isError, error} = useGetSkills({inView,selectedBtn});
+    const {skills, isLoading, isError, error} = useGetSkills({inView,selectedBtn,page});
 
     if(isError) return <Error/>
 
@@ -63,15 +66,22 @@ const Skills = () => {
                 {isLoading ? 
                 <Loading/>
                 :
-                <div className="skills flex gap-4 flex-wrap">
-                    {
-                        skills?.data?.skills?.map((skill)=>(
-                            <div key={skill._id} className="skill p-2 py-0 border border-dark dark:border-secondary rounded-full">
-                                <h4 className='text-base font-semibold'>{skill.skillName}</h4>
-                            </div>
-                        ))
-                    }
-                </div>}
+                skills?.data?.skills.length === 0 ?
+                <Empty name={'Skills'}/>
+                :
+                <>
+                    <div className="skills flex gap-4 flex-wrap">
+                        {
+                            skills?.data?.skills?.map((skill)=>(
+                                <div key={skill._id} className="skill p-2 py-0 border border-dark dark:border-secondary rounded-full">
+                                    <h4 className='text-base font-semibold'>{skill.skillName}</h4>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </>
+                }
+                <Pagination response={skills} page={page} setFun={setPage} name="skills" />
             </div>
         </section>
     )

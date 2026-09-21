@@ -1,18 +1,18 @@
 import { BadgeAlertIcon, FaceExpressionless } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import WorkCard from './WorkCard'
 import useGetExperiences from '@/hooks/experiences/useGetExperiences'
 import Error from '../models/Error'
 import Loading from '../models/Loading'
 import { useInView } from 'react-intersection-observer'
+import Empty from '../models/Empty'
 
 const Experinces = () => {
-
+    const [page,setPage] = useState(1);
     const {ref,inView}=useInView({
         rootMargin: '400px'
     })
-    const {experiences, isLoading, isError} = useGetExperiences({page: 1, inView});
-    console.log(experiences)
+    const {experiences, isLoading, isError} = useGetExperiences({page, inView});
 
     if(isError) return <Error />
 
@@ -26,9 +26,12 @@ const Experinces = () => {
                 isLoading ?
                 <Loading/>
                 :
+                experiences?.data?.experiences?.length === 0 ?
+                <Empty name={'Experiences'}/>
+                :
                 <div className="text my-4 flex flex-col gap-4">
                     {
-                        experiences?.data?.experiences?.map((card,i)=> <WorkCard key={card.id} card={card} first={i===0}/>)
+                        experiences?.data?.experiences?.map((card,i)=> <WorkCard key={card._id} card={card} first={i===0}/>)
                     }
                 </div>
             }

@@ -1,9 +1,10 @@
 import React from 'react'
+import './loading.css'
 
     const Loading = () => {
         return (
             <div className="loading flex justify-center items-center h-40">
-                <p className='text-lg font-sm'>Loading...</p>
+                <span className="loader"></span>
             </div>
         )
     }

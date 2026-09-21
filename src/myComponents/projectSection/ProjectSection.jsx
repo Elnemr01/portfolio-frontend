@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import Title from '../title/Title'
-import { myProjects } from '@/constants/data'
 import ProjectCard from './ProjectCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router';
@@ -8,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import useGetProjects from '@/hooks/projects/useGetProjects';
 import Error from '../models/Error';
 import Loading from '../models/Loading';
+import Empty from '../models/Empty';
 
 const ProjectSection = () => {
 
@@ -23,6 +23,9 @@ const ProjectSection = () => {
             {
                 isLoading ?
                     <Loading/>
+                :
+                projects?.data?.projects.length === 0 ?
+                <Empty name={'Projects'}/>
                 :
                 <div className="container flex flex-col gap-4 mt-8">
                     {

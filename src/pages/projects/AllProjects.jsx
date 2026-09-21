@@ -1,16 +1,18 @@
-import { contact, myProjects } from '@/constants/data'
+import { contact } from '@/constants/data'
 import useGetProjects from '@/hooks/projects/useGetProjects'
+import Empty from '@/myComponents/models/Empty'
 import Error from '@/myComponents/models/Error'
 import Loading from '@/myComponents/models/Loading'
+import Pagination from '@/myComponents/pagination/Pagination'
 import ProjectCard from '@/myComponents/projectSection/ProjectCard'
 import { ArrowBigLeft } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router'
 
 const AllProjects = () => {
-    const {projects ,isLoading,isError} = useGetProjects({page:1,inView: true});
+    const [page,setPage] =useState(1);
+    const {projects ,isLoading,isError} = useGetProjects({page,inView: true});
 
-    if(isLoading) return <Loading/>
     if(isError) return <Error/>
 
     return (
@@ -27,8 +29,15 @@ const AllProjects = () => {
                         <a href={contact[2].link} target="_blank" rel="noopener noreferrer">My GitHub</a></span>.
                 </h1>
                 {
+                    isLoading ? 
+                    <Loading/>
+                    :
+                    projects?.data?.projects.length === 0 ?
+                    <Empty name={'Projects'}/>
+                    :
                     projects?.data?.projects.map((project,i)=> <ProjectCard key={project._id} project={project} first={i === 0} /> )
                 }
+                <Pagination response={projects} page={page} setFun={setPage} name='projects'/>
             </div>
         </section>
     )
