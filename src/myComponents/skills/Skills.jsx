@@ -51,7 +51,7 @@ const Skills = () => {
                                     </Button>
                                 <Button className={`p-4 rounded-sm
                                     text-lg cursor-pointer w-full mt-2
-                                    ${selectedBtn==='others' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`} onClick={()=>setBtn('others')}>
+                                    ${selectedBtn==='others' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`} onClick={()=>setBtn('other')}>
                                         Others & Tools
                                 </Button>
                                 

@@ -20,6 +20,7 @@ const WorkCard = ({card}) => {
                     <AccordionTrigger>
                         <div className="front flex flex-col gap-2 text-base">
                             <h2 className='text-2xl text-primary'>{card.title}</h2>
+                            <h3 className='text-dark dark:text-secondary'>{card.subtitle}</h3>
                             <div className='flex gap-6 '>
                                 <p className=' text-dark dark:text-secondary flex items-center gap-2'> 
                                     <MapPin className="" size={15} />
