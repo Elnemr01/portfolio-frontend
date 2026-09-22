@@ -23,6 +23,11 @@ const Skills = () => {
     const [selectedBtn,setBtn]=useState("frontend");
     const {skills, isLoading, isError, error} = useGetSkills({inView,selectedBtn,page});
 
+    const handleClickFilter = (btn)=>{
+        setBtn(btn);
+        setPage(1);
+    }
+
     if(isError) return <Error/>
 
     return (
@@ -43,18 +48,21 @@ const Skills = () => {
                             <DropdownMenuGroup>
                                 <Button className={`p-4 rounded-sm
                                     text-lg cursor-pointer w-full mt-2
-                                    ${selectedBtn==='frontend' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`} onClick={()=>setBtn('frontend')}>
+                                    ${selectedBtn==='frontend' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`}
+                                    onClick={()=>handleClickFilter('frontend')}>
                                         Frontend
                                     </Button>
                                 <Button className={`p-4 rounded-sm
                                     text-lg cursor-pointer w-full mt-2
-                                    ${selectedBtn==='backend' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`} onClick={()=>setBtn('backend')}>
+                                    ${selectedBtn==='backend' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`}
+                                    onClick={()=>handleClickFilter('backend')}>
                                         Backend
                                     
                                     </Button>
                                 <Button className={`p-4 rounded-sm
                                     text-lg cursor-pointer w-full mt-2
-                                    ${selectedBtn==='others' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`} onClick={()=>setBtn('other')}>
+                                    ${selectedBtn==='other' ? 'bg-primary text-light' : ' bg-dark text-light dark:bg-light dark:text-dark'}`}
+                                    onClick={()=>handleClickFilter('other')}>
                                         Others & Tools
                                 </Button>
                                 
