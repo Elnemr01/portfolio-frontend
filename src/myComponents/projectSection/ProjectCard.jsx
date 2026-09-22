@@ -47,7 +47,7 @@ const ProjectCard = ({project,first}) => {
                         </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                        <div className="description border border-y-dark dark:border-secondary border-transparent p-4 mt-4">
+                        <div className="description border border-y-dark dark:border-secondary dark:border-x-transparent  border-transparent p-4 mt-4">
                             <h3 className='text-lg font-semibold text-dark dark:text-secondary mb-4'>Description</h3>
                             <ul className=' flex flex-col gap-3 list-disc pl-4 text-base'>
                                 {

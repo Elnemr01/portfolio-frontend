@@ -28,7 +28,7 @@ const MessageForm = () => {
     return (
         <div className='message border border-dark dark:border-secondary rounded-lg p-4'>
             <div className="title text-2xl font-semibold text-dark dark:text-light mb-4">
-                Quick Message
+                Message Me
             </div>
             <form onSubmit={formik.handleSubmit} className='p-2 flex flex-col gap-4'>
                 <div className='flex flex-col gap-1'>

@@ -31,10 +31,10 @@ const Landing = () => {
                             <span className="absolute w-40 h-40 border-4 bg-transparent border-t-primary
                             border-r-primary -top-5 -right-5 border-transparent"></span>
                             <img
-                                src="./my-profile.jpeg"
+                                src="./profile.jpeg"
                                 alt="profile picture"
                                 loading="lazy"
-                                className='w-80'
+                                className='w-70'
                             />
                             <span className="absolute -bottom-5 -left-5 w-40 h-40 border-4 bg-transparent
                             border-l-primary border-b-primary border-transparent"></span>
