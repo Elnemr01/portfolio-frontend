@@ -5,7 +5,11 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { GitBranch, Link2 } from 'lucide-react'
+import { Link2 } from 'lucide-react'
+
+import {
+    SiGithub,
+} from 'react-icons/si'
 
 
 
@@ -35,7 +39,7 @@ const ProjectCard = ({project,first}) => {
                             <div className="links flex items-center gap-4">
                                 {project.github && <a href={project.github} target='_blank' rel='noopener noreferrer'
                                 className='flex items-center text-light gap-2 dark:text-dark px-2 py-1 font-semibold bg-dark dark:bg-light rounded-md cursor-pointer'>
-                                    <GitBranch size={20} className="text-"/>
+                                    <SiGithub size={20} className="text-"/>
                                     <span>View Code</span>
                                 </a>}
                                 {project.live && <a href={project.live} target='_blank' rel='noopener noreferrer'

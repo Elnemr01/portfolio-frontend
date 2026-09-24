@@ -46,7 +46,7 @@ export const contact = [
     {
         id: '05',
         title: 'WhatsApp',
-        link: 'https://wa.me/01204662807',
+        link: 'https://wa.me/201204662807',
         icon: SiWhatsapp
     },
     {
